@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/43677564/passing-input-from-html-to-python-and-back
+https://towardsdatascience.com/use-cases-of-googles-universal-sentence-encoder-in-production-dd5aaab4fc15
+https://www.tensorflow.org/hub/hosting
+https://www.tensorflow.org/hub/basics
