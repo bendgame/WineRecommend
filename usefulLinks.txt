@@ -2,3 +2,22 @@ https://stackoverflow.com/questions/43677564/passing-input-from-html-to-python-a
 https://towardsdatascience.com/use-cases-of-googles-universal-sentence-encoder-in-production-dd5aaab4fc15
 https://www.tensorflow.org/hub/hosting
 https://www.tensorflow.org/hub/basics
+
+def Test_model(rating, country, variety, color):
+    
+    dfco = df.loc[(df.country == country)][:1]
+    dfv = df.loc[(df.variety ==variety)][:1]
+    dfc = df.loc[(df.color == color)][:1]
+
+
+    
+    a = list(dfco['countryID'])
+    b = list(dfv['varietyID'])
+    c = list(dfv['colorID'])   
+
+    dft = pd.DataFrame({'rating':rating,
+                    "countryID":a,
+                    "varietyID":b,
+                    "colorID":c,})
+    
+    return model.predict(dft).round()
