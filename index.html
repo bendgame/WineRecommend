@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>World Cup History</title>
+  <meta charset="UTF-8">
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">FIFA World Cup  
+            <a class="navbar-brand" href="/wins">Win Stats</a>
+            <!--<img class="nav-ufo" src="../static/Images/soccer-ball.svg" style="width:40px;height:40px;"> -->
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>THE FIFA WORLD CUP</h1>
+      <p>History</p>
+    </div>
+
+<!-- start charts -->
+<!-- drop down -->
+<div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+           
+            <h5> SELECT YEAR:</h5>
+            <!-- optionChanged will contain the sample number to pass to java -->
+            <select id="selDataset" onchange="optionChanged(this.value)">
+                                 
+            </select>
+        
+        </div> 
+        <div class="col-md-9"></div> 
+</div>
+
+<div id="optionsContent" class="tabcontent" style="display: block;">
+  <p>Generate new map to apply the options!</p>
+  <table>
+    <tbody>
+      <td title="Select template to be used for a Heightmap generation">country</td>
+      <td>
+        <select id="templateInput">
+          <option value="Portugal"selected="Portugal">Portugal</option>		
+          <option value="US">US</option>
+          <option value="	Argentina	">Argentina</option>
+          <option value="Armenia">Armenia</option>
+          <option value="Australia">Australia</option>
+          <option value="Austria">Austria</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Bulgaria">Bulgaria</option>
+          <option value="Canada">Canada</option>
+          <option value="Chile">Chile</option>
+          <option value="Croatia">Croatia</option>
+          <option value="Cyprus">Cyprus</option>
+          <option value="Czech Republic">Czech Republic</option>
+          <option value="England">England</option>
+          <option value="France">France</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Germany">Germany</option>
+          <option value="Greece">Greece</option>
+          <option value="Hungary">Hungary</option>
+          <option value="India">India</option>
+          <option value="Israel">Israel</option>
+          <option value="Italy">Italy</option>
+          <option value="Lebanon">Lebanon</option>
+          <option value="Luxembourg">Luxembourg</option>
+          <option value="Macedonia">Macedonia</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Moldova">Moldova</option>
+          <option value="Morocco">Morocco</option>
+          <option value="New Zealand">New Zealand</option>
+          <option value="Peru">Peru</option>
+          <option value="Romania">Romania</option>
+          <option value="Serbia">Serbia</option>
+          <option value="Slovakia">Slovakia</option>
+          <option value="Slovenia">Slovenia</option>
+          <option value="South Africa">South Africa</option>
+          <option value="Spain">Spain</option>
+          <option value="Switzerland">Switzerland</option>
+          <option value="Turkey">Turkey</option>
+          <option value="Ukraine">Ukraine</option>
+          <option value="Uruguay">Uruguay</option>
+
+        </select>
+      </td>
+      <td></td>
+    </tr>
+    </tbody>
+    </table>
+
+    <table>
+      <tbody>
+        <td title="Select template to be used for a Heightmap generation">color</td>
+        <td>
+          <select id="templateInput">
+            <option value="red"selected="red">red</option>		
+            <option value="white">white</option>
+            <option value="other">other</option>   
+          </select>
+        </td>
+        <td></td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="../static/js/app.js"></script>
+ <script src="../static/js/NonDynamic.js"></script> 
+ <script src="../static/js/config.js"></script> 
+  
+</body>
+
+</html>
