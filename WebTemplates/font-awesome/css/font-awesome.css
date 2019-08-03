@@ -164,10 +164,10 @@
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
 .fa-glass:before {
-  content: "\f000";
+  content: "\f000";s
 }
-.fa-music:before {
-  content: "\f001";
+.fa-globe:before {
+  content: "\f0ac";
 }
 .fa-search:before {
   content: "\f002";
@@ -187,8 +187,8 @@
 .fa-user:before {
   content: "\f007";
 }
-.fa-film:before {
-  content: "\f008";
+.fa-bomb:before {
+  content: "\f1e2";
 }
 .fa-th-large:before {
   content: "\f009";
@@ -1669,4 +1669,7 @@
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-trophy:before {
+  content: "\f091";
 }
