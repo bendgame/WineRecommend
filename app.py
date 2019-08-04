@@ -142,7 +142,8 @@ def recommendation():
             result = recommend_engine(query, color)
             re = result.to_dict()
             recommend_list = list(re.values())
-    return jsonify(recommend_list)
+    #return jsonify(recommend_list)
+    return render_template("recommendation.html", recommendation_01 = recommend_list[0], recommendation_02 = recommend_list[1], recommendation_03 = recommend_list[2] )
 
 if __name__ == "__main__":
     app.run(debug = False)
