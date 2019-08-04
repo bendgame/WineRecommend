@@ -73,14 +73,11 @@ def predict():
             variety = to_predict_list['variety']
             rating = to_predict_list['rating']
         
-        # to_predict_list = request.form.to_dict()
-        # to_predict_list = list(to_predict_list.values())
-        # to_predict_list = list(map(int, to_predict_list))
             result = prediction(rating,country,variety,color)
             re = list(result)
             prd = {"price":re}
              
-        return jsonify(prd)
+        return render_template("prediction.html", predicted_price = re[0] )
 
 if __name__ == "__main__":
     app.run(debug = True)
