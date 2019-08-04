@@ -10,10 +10,16 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from sklearn.model_selection import train_test_split
+from sklearn import ensemble
+from sklearn.metrics import mean_absolute_error
+from sklearn.externals import joblib
+from sklearn.metrics import roc_curve, auc
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__, static_url_path='/static') 
+model = joblib.load("xbgWinePrice.pkl")
 
 
 
@@ -32,51 +38,49 @@ Base.prepare(db.engine, reflect=True)
 @app.route("/")
 def index():
     """Return the homepage."""
-    return render_template("index.html")
+    return render_template("index2.html")
   
 
 
-@app.route("/country")
-def country():
-    stmnt1 = 'Select distinct country from wine_data order by country'
+def prediction(rating, country, variety, color):
+
+    stmnt1 = 'Select * from wine_data'
     df = pd.read_sql(stmnt1, db.session.bind)
-    data1 = []
-    a = 0
-    while a < len(df):
-        country = {
-                'country':list(df['country'])[a],
-            }
-        data1.append(country)
-        a+=1
-    
-    stmnt2 = 'Select distinct rating from wine_data'
-    df2 = pd.read_sql(stmnt2, db.session.bind)
-    data2 = []
-    b = 0
-    while b < len(df2):
-        rating = {
-                'rating':list(df2['rating'])[b]
-                }
-        data2.append(rating)
-        b+=1
-    return jsonify(data1)
 
-# def rating():
-#     stmnt2 = 'Select distinct rating from wine_data'
-#     df2 = pd.read_sql(stmnt2, db.session.bind)
-#     data2 = []
-#     b = 0
-#     while b < len(df2):
-#         rating = {
-#                 'rating':list(df2['rating'])[b]
-#                 }
-#         data2.append(rating)
-#         b+=1
-    
-#     return jsonify(data2)
+    dfco = df.loc[(df.country == country)][:1]
+    dfv = df.loc[(df.variety == variety)][:1]
+    dfc = df.loc[(df.color == color)][:1]
+  
+    a = list(dfco['countryID'])
+    b = list(dfv['varietyID'])
+    c = list(dfc['colorID'])   
 
+    dft = pd.DataFrame({"rating":rating,
+                        "countryID":a,
+                        "varietyID":b,
+                        "colorID":c,})
+    
+    
+    return model.predict(dft).round()
+
+@app.route("/result", methods=['POST'])
+def predict():
+        if request.method == 'POST':
+            to_predict_list = request.form.to_dict()
+            #to_predict_list=list(to_predict_list.values())
+            country = to_predict_list['country']
+            color = to_predict_list['color']
+            variety = to_predict_list['variety']
+            rating = to_predict_list['rating']
+        
+        # to_predict_list = request.form.to_dict()
+        # to_predict_list = list(to_predict_list.values())
+        # to_predict_list = list(map(int, to_predict_list))
+            result = prediction(rating,country,variety,color)
+            re = list(result)
+            prd = {"price":re}
+             
+        return jsonify(prd)
 
 if __name__ == "__main__":
-    app.run()
-
-
+    app.run(debug = True)
