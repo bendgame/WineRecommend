@@ -392,14 +392,14 @@ hr {
 }
 
 
-form#contact-form .form-group label {
+form#input-form .form-group label {
 	text-align: left !important;
 	display: block;
 	letter-spacing: 1px;
 	font-size: 16px;
 }
-form#contact-form input,form#contact-form select,form#contact-form textarea {
-	border-radius: 4px;
+form#input-form input,form#input-form select,form#input-form textarea {
+    border-radius: 4px;
 	border: 1px solid #eee;
   -webkit-box-shadow: none;
           box-shadow:  none;
@@ -409,24 +409,40 @@ form#contact-form input,form#contact-form select,form#contact-form textarea {
 	color: #888;
 }
 
-form#contact-form input,form#contact-form select {
+form#input-form input,form#input-form select {
 	height: 40px;
 }
 
-form#contact-form button {
+form#input-form button {
 	border-radius: 4px;
 	height: 40px;
 	text-transform: none;
 	font-size: 16px;
-	font-weight: 700;
+    font-weight: 700
 }
 
-form#contact-form input:focus,form#contact-form select:focus,form#contact-form textarea:focus {
+form#input-form input:focus,form#input-form select:focus,form#input-form textarea:focus {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
           box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
 	background: #fff;
 }
 
+.label{
+    font-size: 16px;
+    color: #888;
+}
+
+.stretched-link{
+    font-size: 16px;
+    color: 800020;
+    font-weight: 700;
+}
+
+.submit{
+    font-size: 16px;
+    color: white;
+    b
+}
 .validation {
     color: red;
     display:none;

@@ -112,20 +112,26 @@
           <!-- <blockquote>
             "Wine is the answer. What was the question?"
           </blockquote> -->
-          <div class= "col-md-6">
-          <a href= "#JupyterNotebookLinke" class="btn btn-skin btn-lg btn-scroll">Feature Engineering</a>
+          <div class= "col-md-10">
+          <a href= "FeatureEngineering.html" class="stretched-link">Feature Engineering</a>
           <br>
           <br>
-          <a href= "#JupyterNotebookLink" class="btn btn-skin btn-lg btn-scroll">Multiple Regression</a>
+          <a href= "#JupyterNotebookLink" class="stretched-link">Multiple Regression: Price</a>
           <br>
           <br>
-          <a href= "#JupyterNotebookLink" class="btn btn-skin btn-lg btn-scroll">Random Forest and Neural Network</a>
+          <a href= "#JupyterNotebookLink" class="stretched-link">Multipe Regression: Rating</a>
           <br>
           <br>
-          <a href= "#JupyterNotebookLink" class="btn btn-skin btn-lg btn-scroll">Gradient Boost Regressor</a>
+          <a href= "#JupyterNotebookLink" class="stretched-link">Random Forest and Neural Network: Price</a>
           <br>
           <br>
-          <a href= "#JupyterNotebookLink" class="btn btn-skin btn-lg btn-scroll">Tensorflow Universal Sentence Encoder</a>
+          <a href= "#JupyterNotebookLink" class="stretched-link">Random Forest and Neural Network: Rating</a>
+          <br>
+          <br>
+          <a href= "GBRnotebook.html" class="stretched-link">Gradient Boost Regressor</a>
+          <br>
+          <br>
+          <a href= "Recommendations.html" class="stretched-link">Tensorflow Universal Sentence Encoder</a>
         </div>
         </div>
       </div>
@@ -211,30 +217,217 @@
       </div>
     </div>
   </section>
-  <!-- /Section: services -->
 
+  <!--Interactive tools Section-->
+            <div class="container">
+              <br>
+                <div class="row">
+                  <div class="col-md-6">
+                  <div class = "form-wrapper marginbot-50">
+                    <h1>Wine Price Predictor</h1>
+                    <p>This is a model that estimates the price of a bottle of 
+                      wine given the selected parameters. The model was designed
+                      uses the Gradient Boosting Regressor from Sci-Kit Learn.</p>
 
+                      <form id="input-form" action="" method="post" role="form" class="inputForm">
+                          <form action="/result" method="POST">
+                            <div class="label">
+                                <label for="country">Country: </label>
+                                <select id="country" name="country">
+                                  <option value="Portugal"selected="Portugal">Portugal</option>
+                                  <option value="US">US</option>
+                                  <option value="Argentina">Argentina</option>
+                                  <option value="Armenia">Armenia</option>
+                                  <option value="Australia">Australia</option>
+                                  <option value="Austria">Austria</option>
+                                  <option value="Brazil">Brazil</option>
+                                  <option value="Bulgaria">Bulgaria</option>
+                                  <option value="Canada">Canada</option>
+                                  <option value="Chile">Chile</option>
+                                  <option value="Croatia">Croatia</option>
+                                  <option value="Cyprus">Cyprus</option>
+                                  <option value="Czech Republic">Czech Republic</option>
+                                  <option value="England">England</option>
+                                  <option value="France">France</option>
+                                  <option value="Georgia">Georgia</option>
+                                  <option value="Germany">Germany</option>
+                                  <option value="Greece">Greece</option>
+                                  <option value="Hungary">Hungary</option>
+                                  <option value="India">India</option>
+                                  <option value="Israel">Israel</option>
+                                  <option value="Italy">Italy</option>
+                                  <option value="Lebanon">Lebanon</option>
+                                  <option value="Luxembourg">Luxembourg</option>
+                                  <option value="Macedonia">Macedonia</option>
+                                  <option value="Mexico">Mexico</option>
+                                  <option value="Moldova">Moldova</option>
+                                  <option value="Morocco">Morocco</option>
+                                  <option value="New Zealand">New Zealand</option>
+                                  <option value="Peru">Peru</option>
+                                  <option value="Romania">Romania</option>
+                                  <option value="Serbia">Serbia</option>
+                                  <option value="Slovakia">Slovakia</option>
+                                  <option value="Slovenia">Slovenia</option>
+                                  <option value="South Africa">South Africa</option>
+                                  <option value="Spain">Spain</option>
+                                  <option value="Switzerland">Switzerland</option>
+                                  <option value="Turkey">Turkey</option>
+                                  <option value="Ukraine">Ukraine</option>
+                                  <option value="Uruguay">Uruguay</option>
+                              </select>
+                              <br>
+                            </div>
+                            <div class="label">
+                                <label for="color">Color: </label>
+                                <select id="color" name="color">
+                                  <option value="red"selected="red">red</option>
+                                  <option value="white">white</option>
+                                  <option value="other">other</option>   
+                              </select>
+                              <br>
+                            </div>
+                            <div class="label">
+                                <label for="variety">Variety: </label>
+                                <select id="variety" name="variety">  
+                                <option value="Portuguese Red"selected="Portuguese Red">Portuguese Red</option>
+                                <option value="Pinot Gris">Pinot Gris</option>
+                                <option value="Riesling">Riesling</option>
+                                <option value="Pinot Noir">Pinot Noir</option>
+                                <option value="Gewürztraminer">Gewürztraminer</option>
+                                <option value="Cabernet Sauvignon">Cabernet Sauvignon</option>
+                                <option value="Chardonnay">Chardonnay</option>
+                                <option value="Malbec">Malbec</option>
+                                <option value="Tempranillo Blend">Tempranillo Blend</option>
+                                <option value="Meritage">Meritage</option>
+                                <option value="Red Blend">Red Blend</option>
+                                <option value="White Blend">White Blend</option>
+                                <option value="Merlot">Merlot</option>
+                                <option value="Nero d'Avola">Nero d'Avola</option>
+                                <option value="Chenin Blanc">Chenin Blanc</option>
+                                <option value="Sauvignon Blanc">Sauvignon Blanc</option>
+                                <option value="Gamay">Gamay</option>
+                                <option value="Petit Verdot">Petit Verdot</option>
+                                <option value="Bordeaux-style White Blend">Bordeaux-style White Blend</option>
+                                <option value="Sangiovese">Sangiovese</option>
+                                <option value="Cabernet Franc">Cabernet Franc</option>
+                                <option value="Champagne Blend">Champagne Blend</option>
+                                <option value="Bordeaux-style Red Blend">Bordeaux-style Red Blend</option>
+                                <option value="Aglianico">Aglianico</option>
+                                <option value="Petite Sirah">Petite Sirah</option>
+                                <option value="Carmenère">Carmenère</option>
+                                <option value="Albariño">Albariño</option>
+                                <option value="Rosé">Rosé</option>
+                                <option value="Zinfandel">Zinfandel</option>
+                                <option value="Grüner Veltliner">Grüner Veltliner</option>
+                                <option value="Viognier">Viognier</option>
+                                <option value="Syrah">Syrah</option>
+                                <option value="Nebbiolo">Nebbiolo</option>
+                                <option value="Pinot Blanc">Pinot Blanc</option>
+                                <option value="Barbera">Barbera</option>
+                                <option value="Rhône-style Red Blend">Rhône-style Red Blend</option>
+                                <option value="Portuguese White">Portuguese White</option>
+                                <option value="Sauvignon">Sauvignon</option>
+                                <option value="Torrontés">Torrontés</option>
+                                <option value="Verdejo">Verdejo</option>
+                                <option value="Shiraz">Shiraz</option>
+                                <option value="Moscato">Moscato</option>
+                                <option value="Grenache">Grenache</option>
+                                <option value="Sparkling Blend">Sparkling Blend</option>
+                                <option value="Garganega">Garganega</option>
+                                <option value="Pinot Grigio">Pinot Grigio</option>
+                                <option value="Tempranillo">Tempranillo</option>
+                                <option value="Melon">Melon</option>
+                                <option value="Rhône-style White Blend">Rhône-style White Blend</option>
+                                <option value="Glera">Glera</option>
+                                <option value="Corvina, Rondinella, Molinara">Corvina, Rondinella, Molinara</option>
+                                <option value="Port">Port</option>
+                                <option value="Sangiovese Grosso">Sangiovese Grosso</option>
+                                <option value="Garnacha">Garnacha</option>
+                                <option value="Mourvèdre">Mourvèdre</option>
+                              </select>
+                              <br>
+                            </div>
+                            <div class="label">
+                                <label for="rating">Rating: </label>
+                                <select id="rating" name="rating">
+                                    <option value="80"selected="80">80</option>
+                                    <option value="81">81</option>
+                                    <option value="82">82</option>
+                                    <option value="83">83</option>
+                                    <option value="84">84</option>
+                                    <option value="85">85</option>
+                                    <option value="86">86</option>
+                                    <option value="87">87</option>
+                                    <option value="88">88</option>
+                                    <option value="89">89</option>
+                                    <option value="90">90</option>
+                                    <option value="91">91</option>
+                                    <option value="92">92</option>
+                                    <option value="93">93</option>
+                                    <option value="94">94</option>
+                                    <option value="95">95</option>
+                                    <option value="96">96</option>
+                                    <option value="97">97</option>
+                                    <option value="98">98</option>
+                                    <option value="99">99</option>
+                                    <option value="100">100</option>
+                              </select>
+                              <br>
+                            <input id="submit" type="submit" value="Predict Price">
+                          </form>
+                        </div>
+                      </div>
+                    </div>
 
+                  <!--second tools start -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class = "form-wrapper marginbot-50">
+                      <h1>Auto-Sommelier </h1>
+                    <p>Let us help you select your next bottle of wine! We used
+                      the Tensorflow Sentence Encoder to create a model that
+                      will create wine recommendations based on your unique tastes. 
+                    </p>
+                       <form id="input-form" action="" method="post" role="form" class="inputForm">
+                       <form action="/recommend" method="POST">
+                      <b>Describe your ideal wine:</b> <input type="text" name="wine_desc"> 
+                      <div class="label">
+                        <label for="color">Color:</label>
+                        <select id="color" name="color">
+                          <option value="red"selected="red">red</option>
+                          <option value="white">white</option>
+                          <option value="other">other</option>   
+                          <option value="all">all</option>  
+                      </select>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
 
-  <!-- Section: contact -->
-  <section id="contact" class="home-section text-center">
-    <div class="heading-contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-offset-2">
+                      <input type="submit" name= "form" value="Query Reviews" class= "btn-skin" />
+                  </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
             <!-- <div class="section-heading">
               <div class="wow bounceInDown" data-wow-delay="0.4s">
-                <h2>Email or phone are welcome</h2>
-              </div>
+                <h2></h2> -->
+              <!-- </div>
               <p class="wow lightSpeedIn" data-wow-delay="0.3s">Gentleman, introduce your self and get in touch with me privately</p>
             </div>
-
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container"> -->
 
       <!-- <div class="row">
         <div class="col-lg-8 col-md-offset-2"> -->
