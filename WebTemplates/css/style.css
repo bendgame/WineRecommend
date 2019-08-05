@@ -621,7 +621,7 @@ a.btn:hover {
 }
 
 
-.btn-skin:hover,
+.btn-skin:hover 
 .btn-skin:focus,
 .btn-skin:active,
 .btn-skin.active {
