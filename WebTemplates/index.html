@@ -67,6 +67,7 @@
                 <li class="active"><a href="#intro">Home</a></li>
                 <li><a href="#about">About The Project</a></li>
                 <li><a href="#gallery">Visualizations</a></li>
+                <li><a href="#input-form">Select Your Wine</a></li>
               </ul>
             </div>
             <!-- /.Navbar-collapse -->
@@ -131,7 +132,7 @@
           <a href= "GBRnotebook.html" class="stretched-link">Gradient Boost Regressor</a>
           <br>
           <br>
-          <a href= "Recommendations.html" class="stretched-link">Tensorflow Universal Sentence Encoder</a>
+          <a href= "RecommendationsNotebook.html" class="stretched-link">Tensorflow Universal Sentence Encoder</a>
         </div>
         </div>
       </div>
@@ -219,6 +220,7 @@
   </section>
 
   <!--Interactive tools Section-->
+  <br>
             <div class="container">
               <br>
                 <div class="row">
@@ -228,9 +230,7 @@
                     <p>This is a model that estimates the price of a bottle of 
                       wine given the selected parameters. The model was designed
                       uses the Gradient Boosting Regressor from Sci-Kit Learn.</p>
-
-                      <form id="input-form" action="" method="post" role="form" class="inputForm">
-                          <form action="/result" method="POST">
+                      <form id="input-form" action="/result" method="POST">
                             <div class="label">
                                 <label for="country">Country: </label>
                                 <select id="country" name="country">
@@ -388,8 +388,7 @@
                       the Tensorflow Sentence Encoder to create a model that
                       will create wine recommendations based on your unique tastes. 
                     </p>
-                       <form id="input-form" action="" method="post" role="form" class="inputForm">
-                       <form action="/recommend" method="POST">
+                       <form id="input-form" action= "/recommend" method="POST">
                       <b>Describe your ideal wine:</b> <input type="text" name="wine_desc"> 
                       <div class="label">
                         <label for="color">Color:</label>
