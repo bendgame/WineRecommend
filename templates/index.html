@@ -103,7 +103,7 @@
           <img src="../static/img/OGsandcrew.jpg" class="img-responsive img-rounded" alt="" />
         </div>
         <div class="col-md-6">
-          <p><strong>We've used Machine Learning Tools to predict price, rating, and recommend wine based on your unique tastes</strong></p>
+          <p><strong>We've used Machine Learning Tools to predict price, rating, and wine recommendations based on your unique tastes</strong></p>
           <!-- <p> 
            Multiple Linear Regression
            <br> Random Forest and Neural Network
@@ -129,10 +129,10 @@
           <a href= "{{ url_for('RandomForestRating') }}" class="stretched-link">Random Forest and Neural Network: Rating</a>
           <br>
           <br>
-          <a href= "{{ url_for('GBRnotebook') }}" class="stretched-link">Gradient Boost Regressor</a>
+          <a href= "{{ url_for('GBRnotebook') }}" class="stretched-link">Gradient Boost Regressor: Price</a>
           <br>
           <br>
-          <a href= "{{ url_for('RecommendationsNotebook') }}" class="stretched-link">Tensorflow Universal Sentence Encoder</a>
+          <a href= "{{ url_for('RecommendationsNotebook') }}" class="stretched-link">Tensorflow Universal Sentence Encoder: Recommendations</a>
         </div>
         </div>
       </div>
@@ -192,7 +192,7 @@
           <div class="wow bounceInDown" data-wow-delay="0.4s">
             <div class="section-heading">
               <h2>Inspecting and Modeling the Data</h2>
-              <p>We sifted through 130k reviews from Kaggle's Wine Reviews Dataset to built our Models</p>
+              <p>We sifted through 130k reviews from Kaggle's Wine Reviews Dataset to build our Models</p>
             </div>
           </div>
         </div>
@@ -227,9 +227,9 @@
                   <div class="col-md-6">
                   <div class = "form-wrapper marginbot-50">
                     <h1>Wine Price Predictor</h1>
-                    <p>This is a model that estimates the price of a bottle of 
+                    <p>This model estimates the price of a bottle of 
                       wine given the selected parameters. The model was designed
-                      uses the Gradient Boosting Regressor from Sci-Kit Learn.</p>
+                      using the Gradient Boosting Regressor from Sci-Kit Learn.</p>
                       <form id="input-form" action="/result" method="POST">
                             <div class="label">
                                 <label for="country">Country: </label>
@@ -386,8 +386,8 @@
                   <div class = "form-wrapper marginbot-50">
                       <h1>Auto-Sommelier </h1>
                     <p>Let us help you select your next bottle of wine! We used
-                      the Tensorflow Sentence Encoder to create a model that
-                      will create wine recommendations based on your unique tastes. 
+                      the Tensorflow Universal Sentence Encoder to create a tool that
+                      recommends wine based on your unique tastes. 
                     </p>
                        <form id="input-form" action= "/recommend" method="POST">
                       <b>Describe your ideal wine:</b> <input type="text" name="wine_desc"> 

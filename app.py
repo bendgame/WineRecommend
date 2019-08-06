@@ -5,6 +5,8 @@ import numpy as np
 import sqlite3 as sql
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pickle
+
 
 import sqlalchemy 
 from sqlalchemy.ext.automap import automap_base
