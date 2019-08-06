@@ -10,7 +10,7 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sklearn.model_selection import train_test_split
 from sklearn import ensemble
@@ -58,43 +58,43 @@ def index():
        
     return render_template("index.html")
   
-@app.route("/FeatureEngineering")
+@app.route("/FeatureEngineering", methods=['GET', 'POST'])
 def FeatureEngineering():
     """Return the homepage."""
        
     return render_template("FeatureEngineering.html")
 
-@app.route("/MRPrice")
+@app.route("/MRPrice", methods=['GET', 'POST'])
 def MRPrice():
     """Return the homepage."""
        
     return render_template("MRPrice.html")
 
-@app.route("/MRRating")
+@app.route("/MRRating", methods=['GET', 'POST'])
 def MRRating():
     """Return the homepage."""
        
     return render_template("MRRating.html")
 
-@app.route("/RandomForestPrice")
+@app.route("/RandomForestPrice", methods=['GET', 'POST'])
 def RandomForestPrice():
     """Return the homepage."""
        
     return render_template("RandomForestPrice.html")
 
-@app.route("/RandomForestRating")
+@app.route("/RandomForestRating", methods=['GET', 'POST'])
 def RandomForestRating():
     """Return the homepage."""
        
     return render_template("RandomForestRating.html")
 
-@app.route("/GBRnotebook")
+@app.route("/GBRnotebook", methods=['GET', 'POST'])
 def GBRnotebook():
     """Return the homepage."""
        
     return render_template("GBRnotebook.html")
 
-@app.route("/RecommendationsNotebook")
+@app.route("/RecommendationsNotebook", methods=['GET', 'POST'])
 def RecommendationsNotebook():
     """Return the homepage."""
        
