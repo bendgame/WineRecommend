@@ -17,9 +17,9 @@ from flask_sqlalchemy import SQLAlchemy
 from sklearn.model_selection import train_test_split
 from sklearn import ensemble
 from sklearn.metrics import mean_absolute_error
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
 from sklearn.metrics import roc_curve, auc
-
+import joblib
 import tensorflow as tf
 import tensorflow_hub as tfhub
 
@@ -185,7 +185,31 @@ def recommendation():
             re = result.to_dict()
             recommend_list = list(re.values())
     #return jsonify(recommend_list)
-    return render_template("recommendation.html", recommendation_01 = recommend_list[0], recommendation_02 = recommend_list[1], recommendation_03 = recommend_list[2] )
-
+    return render_template("recommendation.html"
+                , variety_0 = recommend_list[0]['variety']
+                , title_0 = recommend_list[0]['title']
+                , price_0 = recommend_list[0]['price']
+                , color_0 = recommend_list[0]['color']
+                , description_0 = recommend_list[0]['description']
+                , recommendation_0 = recommend_list[0]['recommendation']
+                , rating_0 = recommend_list[0]['rating']
+                
+                , variety_1 = recommend_list[1]['variety']
+                , title_1 = recommend_list[1]['title']
+                , price_1 = recommend_list[1]['price']
+                , color_1 = recommend_list[1]['color']
+                , description_1 = recommend_list[1]['description']
+                , recommendation_1 = recommend_list[1]['recommendation']
+                , rating_1 = recommend_list[1]['rating']
+                 
+                
+                , variety_2 = recommend_list[2]['variety']
+                , title_2 = recommend_list[2]['title']
+                , price_2 = recommend_list[2]['price']
+                , color_2 = recommend_list[2]['color']
+                , description_2 = recommend_list[2]['description']
+                , recommendation_2 = recommend_list[2]['recommendation']
+                , rating_2 = recommend_list[2]['rating']
+                )
 if __name__ == "__main__":
     app.run(debug = False)
