@@ -56,9 +56,49 @@ result = session.run(em_txt, feed_dict={text_input:list(wine_df.description)})
 def index():
     """Return the homepage."""
        
-    return render_template("index2.html")
+    return render_template("index.html")
   
+@app.route("/FeatureEngineering")
+def FeatureEngineering():
+    """Return the homepage."""
+       
+    return render_template("FeatureEngineering.html")
 
+@app.route("/MRPrice")
+def MRPrice():
+    """Return the homepage."""
+       
+    return render_template("MRPrice.html")
+
+@app.route("/MRRating")
+def MRRating():
+    """Return the homepage."""
+       
+    return render_template("MRRating.html")
+
+@app.route("/RandomForestPrice")
+def RandomForestPrice():
+    """Return the homepage."""
+       
+    return render_template("RandomForestPrice.html")
+
+@app.route("/RandomForestRating")
+def RandomForestRating():
+    """Return the homepage."""
+       
+    return render_template("RandomForestRating.html")
+
+@app.route("/GBRnotebook")
+def GBRnotebook():
+    """Return the homepage."""
+       
+    return render_template("GBRnotebook.html")
+
+@app.route("/RecommendationsNotebook")
+def RecommendationsNotebook():
+    """Return the homepage."""
+       
+    return render_template("RecommendationsNotebook.html")
 
 def prediction(rating, country, variety, color):
 
