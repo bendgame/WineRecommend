@@ -305,16 +305,16 @@ hr {
 .intro {
 	width:100%;
 	position:relative;	
-	background: url(../img/twobottles.jpg) no-repeat top center;
+	background: url(../img/intheweeds.jpg) no-repeat top center;
 	background-size: cover;
 }
 
 #intro.intro {
-	padding:200px 0 150px 0;
+	padding:50px 0 150px 0;
 }
 
 .intro .slogan {
-	text-align: center;
+    text-align: center;
 
 }
 
